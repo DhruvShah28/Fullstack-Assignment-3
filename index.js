@@ -12,21 +12,27 @@ dotenv.config();
 // (using it as json object to use express methods) and defining port to default or 8888
 const app = express();
 const port = process.env.PORT || '8888';
-const allowedOrigins = [
-    "http://localhost:5173",
-    "https://fullstack-assignment-3.vercel.app"
-];
 app.use(cors({
-  origin: function (origin, callback) {
-    // Allow requests with no origin (like mobile apps or curl)
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
-  credentials: true
-}));
+    origin: function (origin, callback) {
+      const allowedOrigins = [
+        "http://localhost:5173",
+        "https://fullstack-assignment-3.vercel.app"
+      ];
+      
+      // Check if origin is allowed or if it's a same-origin request (origin is null)
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+  }));
+  
+  // Add specific handling for OPTIONS requests
+  app.options('*', cors());
 // using the urlencoded method of express and setting the extended to true to extend the request url we get
 app.use(express.urlencoded({extended: true}));
 // using json middleware to parse/change the upcoming request to json format
