@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import './Experience.css';
+import './experience.css';
 
 export default function Experience() {
     const [experience, setExperience] = useState([]);

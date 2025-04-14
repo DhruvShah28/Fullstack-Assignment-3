@@ -1,4 +1,4 @@
-import './HireMe.css';
+import './hireme.css';
 
 export default function HireMe() {
     return (
