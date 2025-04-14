@@ -12,24 +12,22 @@ dotenv.config();
 // (using it as json object to use express methods) and defining port to default or 8888
 const app = express();
 const port = process.env.PORT || '8888';
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://fullstack-assignment-3.vercel.app",
+  "https://fullstack-assignment-1-rms7.onrender.com"
+];
+
 app.use(cors({
-    origin: function (origin, callback) {
-      const allowedOrigins = [
-        "http://localhost:5173",
-        "https://fullstack-assignment-3.vercel.app"
-      ];
-      
-      // Check if origin is allowed or if it's a same-origin request (origin is null)
-      if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error('Not allowed by CORS'));
-      }
-    },
-    credentials: true,
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization']
-  }));
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true
+}));
   
   // Add specific handling for OPTIONS requests
   app.options('*', cors());
