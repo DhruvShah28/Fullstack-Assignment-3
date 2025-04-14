@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import './experience.css';
 
-const url = import.meta.VITE_API_BASE_URL;
+const url = import.meta.env.VITE_API_BASE_URL;
 
 
 export default function Experience() {
