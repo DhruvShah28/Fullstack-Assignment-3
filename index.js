@@ -13,7 +13,7 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || '8888';
 app.use(cors({
-    origin: ["http://localhost:5173", "https://fullstack-assignment-3.vercel.app/"],
+    origin: ["http://localhost:5173", "https://fullstack-assignment-1-rms7.onrender.com"],
     credentials: true
   }));
 // using the urlencoded method of express and setting the extended to true to extend the request url we get
