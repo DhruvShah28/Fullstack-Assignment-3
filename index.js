@@ -12,6 +12,10 @@ dotenv.config();
 // (using it as json object to use express methods) and defining port to default or 8888
 const app = express();
 const port = process.env.PORT || '8888';
+const allowedOrigins = [
+    "http://localhost:5173",
+    "https://fullstack-assignment-3.vercel.app"
+];
 app.use(cors({
   origin: function (origin, callback) {
     // Allow requests with no origin (like mobile apps or curl)
