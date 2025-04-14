@@ -13,10 +13,9 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || '8888';
 app.use(cors({
-    origin: "http://localhost:5173", 
-    credentials: true 
-}));
-
+    origin: ["http://localhost:5173", "fullstack-assignment-3-b2zf.vercel.app"],
+    credentials: true
+  }));
 // using the urlencoded method of express and setting the extended to true to extend the request url we get
 app.use(express.urlencoded({extended: true}));
 // using json middleware to parse/change the upcoming request to json format

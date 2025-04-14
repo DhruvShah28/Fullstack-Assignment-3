@@ -6,7 +6,7 @@ export default function Project() {
 
     useEffect(() => {
         async function fetchData() {
-            const response = await fetch("/projects/api/list");
+            const response = await fetch(`${VITE_API_BASE_URL}/projects/api/list`);
             const data = await response.json();
             setProject(data);
         }
