@@ -1,0 +1,40 @@
+.skills-banner {
+    background-color: #ff6b00;
+    overflow: hidden;
+    padding: 40px 0;
+    position: relative;
+  }
+  
+  .skills-inner {
+    transform: rotate(-2deg);
+    background-color: #fff;
+    padding: 20px 0;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  
+  .scroll-track {
+    display: inline-block;
+    animation: scrollLeft 18s linear infinite;
+  }
+  
+  .scroll-content {
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 600;
+    color: #111;
+  }
+  
+  .scroll-content span {
+    margin: 0 10px;
+  }
+  
+  @keyframes scrollLeft {
+    from {
+      transform: translateX(0%);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  
