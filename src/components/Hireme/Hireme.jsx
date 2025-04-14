@@ -5,7 +5,7 @@ export default function HireMe() {
         <section id="hire" className="hireme-section">
             <div className="hireme-content">
                 <div className="left-box">
-                    <img src="/src/assets/dhruv-new.jpg" alt="Personal Image" />
+                    <img src="/dhruv-new.jpg" alt="Personal Image" />
                 </div>
                 <div className="right-box">
                     <h2 className="hireme-heading">
