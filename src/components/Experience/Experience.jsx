@@ -9,7 +9,7 @@ export default function Experience() {
 
     useEffect(() => {
         async function fetchData() {
-            const response = await fetch(`${url}/experiences/api/list`);
+            const response = await fetch(`${url}/experiences/api/list`,{ mode: "no-cors" });
             const data = await response.json();
             setExperience(data);
         }
