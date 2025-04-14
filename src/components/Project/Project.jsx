@@ -6,7 +6,7 @@ export default function Project() {
 
     useEffect(() => {
         async function fetchData() {
-            const response = await fetch("http://localhost:8888/projects/api/list");
+            const response = await fetch("/projects/api/list");
             const data = await response.json();
             setProject(data);
         }
@@ -30,7 +30,9 @@ export default function Project() {
                                     <span key={index} className="tech-chip">{tech.trim()}</span>
                                 ))}
                             </div>
-
+                            <div className="project-link">
+                                <a href={item.url}>{item.url}</a>
+                            </div>
                             <div className="project-meta">
                                 <span className={`status ${item.status === 'Completed' ? 'completed' : 'ongoing'}`}>
                                     {item.status}

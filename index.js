@@ -12,7 +12,10 @@ dotenv.config();
 // (using it as json object to use express methods) and defining port to default or 8888
 const app = express();
 const port = process.env.PORT || '8888';
-app.use(cors()); // Use CORS middleware for all routes.
+app.use(cors({
+    origin: "http://localhost:5173", 
+    credentials: true 
+}));
 
 // using the urlencoded method of express and setting the extended to true to extend the request url we get
 app.use(express.urlencoded({extended: true}));

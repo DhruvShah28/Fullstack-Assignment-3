@@ -52,6 +52,11 @@
     cursor: pointer;
   }
   
+  .project-link a{
+    color: #fff;
+    text-decoration: none;
+  }
+
   /* Inner content padding */
   .project-content {
     padding: 24px;
